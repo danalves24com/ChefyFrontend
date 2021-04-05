@@ -60,24 +60,27 @@ class InputDropdown extends React.Component {
 	}
 }
 
-
 class NavBar extends React.Component {
-	render() {
+
+	render () {
+
 		return (
-			<div class="grid grid-cols-2 text-xl">
-				<div class="grid grid-cols-3 mx-3">
-					<NavLink text="Start" color="green" href="/start" />
-					<NavLink text="Cook Book" color="yellow" href="/cookbook" />
+
+			<div class="grid grid-cols-2">
+				<div class="grid grid-cols-4">
+					<NavLink text="Home" id="home" href="/" color="yellow" />
+					<NavLink text="Create" id="dish" href="/create" color="green" />
+					<NavLink text="Book" id="book" href="/book" color="blue" />
 				</div>
-				
-				<div class="">
+				<div class="grid grid-cols-2">
+					
 				</div>
 			</div>
-
-
-		)		
+		)
 	}
-	
 }
 
+
 export {LinkButton, NavLink, InputText, InputDropdown, NavBar};
+
+

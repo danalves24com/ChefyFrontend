@@ -12,7 +12,9 @@ class Home extends React.Component {
 				<div class="h-80 border-b ">
 					<div class="py-40 text-center">
 						<h1 class="tracking-wide text-4xl">Chefy</h1>
-						<p></p>	
+						<p>
+							
+						</p>	
 					</div>
 				</div>
 			</>

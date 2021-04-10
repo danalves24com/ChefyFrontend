@@ -39,7 +39,7 @@ class InputText extends React.Component {
 
 		return (
 
-			<input class={`text-center border-b border-${this.props.color}-200 focus:border-none hover:border-${this.props.color}-400  focus:ring ring-offset-3 focus:ring-${this.props.color}-500 focus:outline-none m-4 px-2 py-1`}  placeholder={this.props.placeholder} id={this.props.id}></input>
+			<input class={`text-center border-b border-${this.props.color}-200 focus:border-none hover:border-${this.props.color}-400  focus:ring ring-offset-3 focus:ring-${this.props.color}-500 focus:outline-none my-4 px-2 py-1 ${this.props.style}`}  placeholder={this.props.placeholder} id={this.props.id}></input>
 
 		)
 	}

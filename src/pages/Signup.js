@@ -76,6 +76,7 @@ function Signup() {
         console.log("Logout Failure ", error);
     }
 
+
     const handleRequest = () => {
         setLoading("Loading...");
     }

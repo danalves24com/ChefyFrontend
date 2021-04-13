@@ -64,7 +64,7 @@ class InputDropdown extends React.Component {
 function propperRightCornerText() {
 
     var user = localStorage.getItem("user");
-    if (user == "null") {
+    if (user == "null" || user == null) {
         return "Signup"
     }
     else if (user != null) {
@@ -77,7 +77,7 @@ function propperRightCornerText() {
 function propperAccountHref() {
 
     var user = localStorage.getItem("user")
-    if (user == "null") {
+    if (user == "null" || user == null) {
         return "/signup"
     }
     else if (user != null) {

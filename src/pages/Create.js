@@ -1,7 +1,7 @@
 import React from 'react'
 import {InputText} from '../components/components.js'
 import $ from 'jquery'
-
+import API from '../components/Api.js'
 
 for(var i = 0 ; i < 40; i+=1) {
 	$("#list").append("<a>dada</a>")
@@ -48,7 +48,7 @@ class Create extends React.Component {
 		localStorage.setItem("ingredients", "")
 		var endpoint = "/api/ingredients/get-all"
 		var settings = {
-	"url": "http://localhost:62964/api/ingredients/get-all",
+	"url": API+"/api/ingredients/get-all",
 	"method": "GET",
 	"timeout": 0,
 	};

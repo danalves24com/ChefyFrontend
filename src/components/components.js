@@ -66,16 +66,50 @@ class NavBar extends React.Component {
 
 		return (
 
-			<div class="grid grid-cols-2">
-				<div class="grid grid-cols-4">
-					<NavLink text="Home" id="home" href="/" color="yellow" />
-					<NavLink text="Create" id="dish" href="/create" color="green" />
-					<NavLink text="Book" id="book" href="/book" color="blue" />
-				</div>
-				<div class="grid grid-cols-2">
-					
-				</div>
-			</div>
+<nav class="bg-green-900">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+	<a href="/">
+          <img class="block h-10 w-auto" src="./favicon.png" alt="Logo"></img>
+	</a>
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <a href="/" class="bg-green-800 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+            <a href="/create" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
+
+            <a href="/contribute" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contribute</a>
+
+            <a href="/book" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Book</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div class="ml-3 relative">
+			
+            <a href="/account" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
+
+      <a href="/create" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Create</a>
+
+      <a href="/contribute" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contribute</a>
+
+      <a href="/book" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Book</a>
+    </div>
+  </div>
+</nav>
 		)
 	}
 }

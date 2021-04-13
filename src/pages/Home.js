@@ -12,7 +12,7 @@ class Home extends React.Component {
 					<div class="py-40 text-center">
 						<h1 class="tracking-wide text-4xl">Chefy</h1>
 						<p>
-							Largest recipe serach engine
+							Cooking made easy
 						</p>	
 					</div>
 				</div>

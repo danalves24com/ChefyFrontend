@@ -4,6 +4,9 @@ import Home from './pages/Home.js'
 import Create from './pages/Create.js'
 import Complie from './pages/Compile.js'
 import Recipe from './pages/Recipe.js'
+import Contribute from './pages/contribute.js'
+import Signup from './pages/Signup.js'
+
 
 import {NavBar} from './components/components.js'
 
@@ -16,6 +19,8 @@ function App() {
 	  		<Route exact path="/create" component={Create} />
 	  		<Route exact path="/compile" component={Complie} />
 	  		<Route exact path="/recipe" component={Recipe} />
+	  		<Route exact path="/contribute" component={Contribute} />
+	  		<Route exact path="/signup" component={Signup} />
 	  	</BrowserRouter>
 	</>
   );

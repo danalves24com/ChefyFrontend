@@ -1,6 +1,8 @@
 import React from 'react'
 import $ from 'jquery';
-
+import Api from '../components/Api';
+import xss from 'xss';
+import { func } from 'prop-types';
 
 
 function tagCard(tag) {
@@ -27,7 +29,7 @@ var steps = [];
 function addStep() {
 
     var step = `<h3>${steps.length + 1} - ${$("#step")[0].value}</h3>`
-    $($("#stepList")[0]).append(step)
+    $($("#stepList")[0]).append(xss(step))
 }
 
 
@@ -37,10 +39,45 @@ function addIngredient() {
     console.log(ingredient, quantity, units)
     var ind = quantity + "~i~" + units + "~i~" + ingredient, code = `<h4>${quantity} ${units} ${ingredient}</h4>`
     ingredients.push(ind);
-    $($("#ingList")[0]).append(code)
+    $($("#ingList")[0]).append(xss(code))
 
 }
 
+
+function fill(element, data) {
+    for (var d in data) {
+        d = data[d];
+        element.append(`<option value="${d}">${d}</option>`)
+    }
+
+}
+
+
+function fillOptions() {
+    var units = ["gram", "kilo", "teaspoon", "tablespoon", "cup"]
+    var tags = ['gluten-free', 'vegan', 'vegetarian']
+    var ingredients = []
+
+    var settings = {
+        "url": Api + "/api/ingredients/get-all",
+        "method": "GET",
+        "timeout": 0,
+    };
+
+    $.ajax(settings).done(function (response) {
+        ingredients = response;
+        fill($("#ingsSelect"), ingredients)
+    });
+
+
+    fill($("#tagsS"), tags);
+    fill($("#units"), units);
+}
+
+
+function submit() {
+
+}
 var tags = []
 class Cont extends React.Component {
 
@@ -51,8 +88,12 @@ class Cont extends React.Component {
             window.location.pathname = "/signup"
         }
 
-        var units = ["gram", "kilo", "teaspoon", "tablespoon", "cup"]
-        addTagArray(['gluten-free', 'vegan', 'vegetarian']);
+
+        fillOptions()
+
+
+
+
         $($("#tagsS")[0]).on("change", () => { var tag = $($("#tagsS")[0])[0].value; if (!tags.includes(tag)) { tags.push(tag); $($("#showTags")[0]).html($($("#showTags")[0]).html() + tagCard(tag)); } })
 
     }
@@ -117,6 +158,9 @@ class Cont extends React.Component {
                                         <button class="rounded mx-2 border border-green-200 w-full p-2 text-center my-3" onClick={addStep}>Add</button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="my-4">
+                                <button class="w-full text-center border border-green-200 py-5" onClick={submit}>Submit recipe</button>
                             </div>
                         </div>
                     </div>

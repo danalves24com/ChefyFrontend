@@ -1,1 +1,1 @@
-export default "http://localhost:62964";
+export default "http://ec2-18-220-153-136.us-east-2.compute.amazonaws.com:5000";

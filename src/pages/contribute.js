@@ -24,12 +24,13 @@ function addTagArray(array) {
 
 var ingredients = [];
 var steps = [];
-
+var rawIngs = []
 
 function addStep() {
 
     var step = `<h3>${steps.length + 1} - ${$("#step")[0].value}</h3>`
     $($("#stepList")[0]).append(xss(step))
+    steps.push(xss($("#step")[0].value))
 }
 
 
@@ -40,7 +41,7 @@ function addIngredient() {
     var ind = quantity + "~i~" + units + "~i~" + ingredient, code = `<h4>${quantity} ${units} ${ingredient}</h4>`
     ingredients.push(ind);
     $($("#ingList")[0]).append(xss(code))
-
+    rawIngs.push($("#ingsSelect")[0].value);
 }
 
 
@@ -75,7 +76,49 @@ function fillOptions() {
 }
 
 
+
 function submit() {
+    var user = JSON.parse(localStorage.getItem("user"))
+    var data = {
+        "recipe": {
+            "id": 0,
+            "name": xss($("#name").val()),
+            "steps": steps,
+            "ingredients": ingredients,
+            "description": xss($("#about").val()),
+            "comments": [],
+            "tags": tags,
+            "total_time": $("#h").val() + "h " + $("#m").val() + "m",
+            "raw_ingredients": rawIngs,
+            "author": user.name,
+            "source": "chefy web",
+            "image_src": "",
+            "matched": 0
+        },
+        "author": {
+            "id": 0,
+            "email": user.email,
+            "password": user.password
+        }
+    }
+
+
+    console.log(data)
+
+
+    var settings = {
+        "url": Api+"/api/recipes/add",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify(data),
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 
 }
 var tags = []
@@ -104,18 +147,18 @@ class Cont extends React.Component {
                 <div id="top">
 
                 </div>
-                <div id="fill" class="my-5">
+                <div id="fill" class="my-5 text-white">
                     <div class="grid md:grid-cols-2">
                         <div class="m-5">
                             <div class="my-5"><h1 class="text-2xl">Tell us about your recipe</h1></div>
 
-                            <input placeholder="Name" class="w-full border-b border-green-200 p-2 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"></input>
+                            <input placeholder="Name" id="name" class="w-full border-b border-green-200 p-2 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"></input>
                             <div class="my-5 text-center">
                                 <label for="time" class="my-5 w-full text-center text-lg">Total Time</label>
-                                <div id="time" class="grid grid-cols-2 my-2">
-                                    <div><input placeholder="Hours" type="number" id="h" min="0" class="border-b border-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent w-full p-2" ></input></div>
+                                <div id="time" class="grid grid-cols-2 my-2 gap-3">
+                                    <div><input placeholder="Hours" type="number" id="h" min="0" class=" border-b border-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent w-full p-2" ></input></div>
 
-                                    <div><input placeholder="Hours" type="number" id="h" min="0" class="border-b border-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent w-full p-2" ></input></div>
+                                    <div><input placeholder="Hours" type="number" id="m" min="0" class=" border-b border-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent w-full p-2" ></input></div>
                                 </div>
                             </div>
                             <div class="my-5 text-center">

@@ -17,7 +17,7 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Chefy</title>
   </head>
-  <body>
+  <body class="bg-gray-800">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
@@ -29,11 +29,11 @@
 		var togV = item.getAttribute("data-slected")
 		if(togV == "false"){
 			item.setAttribute("data-slected", true)
-			item.setAttribute("class", item.getAttribute("class")+" bg-green-200")
+			item.setAttribute("class", item.getAttribute("class")+" bg-green-200 text-black")
 		}
 		else {
 			item.setAttribute("data-slected", false)
-			item.setAttribute("class", item.getAttribute("class").replace("bg-green-200", ""))
+			item.setAttribute("class", item.getAttribute("class").replace("bg-green-200 text-black", ""))
 		}
 		console.log(togV)
 		

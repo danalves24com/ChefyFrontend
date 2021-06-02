@@ -8,7 +8,7 @@ class Home extends React.Component {
 
 		return (
 			<>
-				<div class="h-80 border-b ">
+				<div class="h-80 border-b text-white ">
 					<div class="py-40 text-center">
 						<h1 class="tracking-wide text-4xl">Chefy</h1>
 						<p>
@@ -16,7 +16,7 @@ class Home extends React.Component {
 						</p>	
 					</div>
 				</div>
-				<div class="text-center text-3xl my-5">What can Chefy do?</div>
+				<div class="text-center text-white text-3xl my-5">What can Chefy do?</div>
 				<div class="grid md:grid-cols-3 py-4 mx-10">
 					<div class="rounded m-2 p-3 bg-green-200 hover:shadow px-6">
 						<div class="text-2xl border-b border-black py-2 tracking-wide text-center">Save you time</div>

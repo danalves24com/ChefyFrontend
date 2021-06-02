@@ -68,7 +68,7 @@ class Create extends React.Component {
 		return (
 
 			<>
-				<div class="h-screen mx-10">
+				<div class="h-screen mx-10 text-white">
 				
 					<div class="grid md:grid-cols-2 h-1/2">
 						<div class="text-center tracking-widest text-3xl flex items-center justify-center h-1/3">
@@ -80,7 +80,7 @@ class Create extends React.Component {
 								<div class="overflow-y-scroll h-full shadow" id="list">
 									
 								</div>								
-								<button onClick={getAllSelected} class="tracking-wide my-4 text-2xl bg-green-200 p-2">Create</button>
+								<button onClick={getAllSelected} class="text-black tracking-wide my-4 text-2xl bg-green-200 p-2">Create</button>
 							</center>
 						</div>
 					</div>

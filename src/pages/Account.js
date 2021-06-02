@@ -23,7 +23,7 @@ class Acount extends React.Component {
     getItem = (id) => {
 
         var settings = {
-            "url": Api +"/api/recipes/get/"+id,
+            "url": Api + "/api/recipes/get/" + id,
             "method": "GET",
             "timeout": 0,
         };
@@ -37,7 +37,7 @@ class Acount extends React.Component {
     render() {
         return (
             <>
-                <div class="">
+                <div class="text-white">
                     <div class="p-4 text-3xl md:flex my-5">
                         <span class="md:w-1/2 text-center">Hello {this.state.name.split("~%20~")[0]}</span>
 
@@ -61,10 +61,10 @@ class Acount extends React.Component {
                                         <div class="overflow-scroll ">
                                             {
                                                 this.state.contributed.split("~%20~").map((x) => {
-                                                    
+
                                                     <div>
                                                         {this.getItem(x)}
-                                                    </div>                                                    
+                                                    </div>
 
                                                 })
                                             }

@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\components"
+    "\\src\\components",
+    "\\src\\pages",
+    "\\src\\pages\\AIChef"
   ],
-  "SelectedNode": "\\src\\components\\Api.js",
+  "SelectedNode": "\\src\\pages\\Recipe.js",
   "PreviewInSolutionExplorer": false
 }

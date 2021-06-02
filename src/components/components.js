@@ -95,7 +95,7 @@ class NavBar extends React.Component {
 
         return (
 
-            <nav class="bg-green-900">
+            <nav class="bg-gray-900 text-gray-50">
                 <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                     <div class="relative flex items-center justify-between h-16">
                         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -108,19 +108,22 @@ class NavBar extends React.Component {
                             </div>
                             <div class="hidden sm:block sm:ml-6">
                                 <div class="flex space-x-4">
-                                    <a href="/" class="bg-green-800 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                    <a href="/" class=" px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
-                                    <a href="/create" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
+                                    <a href="/create" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create</a>
 
-                                    <a href="/contribute" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contribute</a>
-
-                                    <a href="/book" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Book</a>
+                                    <a href="/contribute" class=" hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contribute</a>
+                                    
                                 </div>
                             </div>
                         </div>
+                        <div class="flex-1 flex items-center justify-center hidden sm:block">
+                            <a href="/ai" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">AI Chef</a>
+                            <a href="/teach-chefy" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teach our AI</a>
+                        </div>
                         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             <div class="ml-3 relative">
-                                <a href={propperAccountHref()} id="acc" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <a href={propperAccountHref()} id="acc" class=" hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                     {propperRightCornerText()}
                                 </a>
                             </div>
@@ -134,9 +137,11 @@ class NavBar extends React.Component {
 
                         <a href="/create" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Create</a>
 
-                        <a href="/contribute" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contribute</a>
+                        <a href="/contribute" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contribute</a>                       
 
-                        <a href="/book" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Book</a>
+                        <a href="/ai" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">AI Chef</a>
+
+                        <a href="/teach-chefy" class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teach our AI</a>
                     </div>
                 </div>
             </nav>

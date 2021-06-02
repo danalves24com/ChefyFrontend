@@ -17,6 +17,7 @@ function authUser(data) {
     $.ajax(settings).done(function (response) {
         console.log("auth :" + response);
         if (response != undefined) {
+            response.password = data.googleId;
             localStorage.setItem("user", JSON.stringify(response));
             window.location.pathname = "/account";
         }

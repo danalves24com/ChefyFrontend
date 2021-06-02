@@ -101,11 +101,11 @@ class Complite extends React.Component {
 		return(
 			<>
 				<div>
-					<div class="md:flex my-6">
+					<div class="md:flex my-6 mx-5">
 						<div class="w-1/4">
 							<input id="query" class="px-1 mx-2 w-full border-b text-center" placeholder="search the results"></input>
 						</div>
-						<div class="w-3/4 flex mx-3 border-l px-3">
+						<div class="w-3/4 flex mx-3 border-l px-3 text-white">
 						<div>Filter by:</div>
 						<div class="overflow-x-scroll" id="filters"></div>
 							<div class="px-3 hover:shadow" onClick={filterBest}>

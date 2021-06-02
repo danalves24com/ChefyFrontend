@@ -55,7 +55,7 @@ class Recipe extends React.Component {
 	render() {
 	return (
 		<>
-			<div id="recipe" class="h-screen">
+			<div id="recipe" class="h-screen text-white">
 				<div class="h-1/2" id="image">
 					<center class="my-3">
 						<img id="img" class="object-cover max-h-80"></img>
